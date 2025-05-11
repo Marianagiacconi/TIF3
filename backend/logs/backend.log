@@ -857,3 +857,40 @@ sqlalchemy.exc.InvalidRequestError: Instance '<User at 0x7fa641238d00>' is not p
 
 2025-05-10 23:24:01,544 - INFO - FarmEye Backend started successfully
 2025-05-10 23:24:06,375 - INFO - Perfil actualizado para usuario: test_user3
+2025-05-10 23:44:03,355 - INFO - FarmEye Backend started successfully
+2025-05-11 00:32:16,013 - WARNING - Usuario no encontrado: string
+2025-05-11 00:35:30,191 - INFO - Usuario registrado exitosamente: marianag
+2025-05-11 00:35:38,170 - INFO - Autenticación exitosa para usuario: marianag
+2025-05-11 00:35:38,175 - INFO - Login exitoso para usuario: marianag
+2025-05-11 00:35:42,542 - INFO - Autenticación exitosa para usuario: marianag
+2025-05-11 00:35:42,547 - INFO - Login exitoso para usuario: marianag
+2025-05-11 00:39:10,352 - INFO - Autenticación exitosa para usuario: marianag
+2025-05-11 00:39:10,357 - INFO - Login exitoso para usuario: marianag
+2025-05-11 00:45:29,512 - INFO - Autenticación exitosa para usuario: marianag
+2025-05-11 00:45:29,533 - INFO - Login exitoso para usuario: marianag
+2025-05-11 00:49:32,289 - INFO - Autenticación exitosa para usuario: marianag
+2025-05-11 00:49:32,293 - INFO - Login exitoso para usuario: marianag
+2025-05-11 01:03:45,358 - INFO - Autenticación exitosa para usuario: marianag
+2025-05-11 01:03:45,362 - INFO - Login exitoso para usuario: marianag
+2025-05-11 01:27:14,859 - INFO - Autenticación exitosa para usuario: marianag
+2025-05-11 01:27:14,863 - INFO - Login exitoso para usuario: marianag
+2025-05-11 01:32:48,985 - INFO - Autenticación exitosa para usuario: marianag
+2025-05-11 01:32:48,990 - INFO - Login exitoso para usuario: marianag
+2025-05-11 01:41:35,267 - INFO - Autenticación exitosa para usuario: marianag
+2025-05-11 01:41:35,272 - INFO - Login exitoso para usuario: marianag
+2025-05-11 01:42:42,367 - INFO - Autenticación exitosa para usuario: marianag
+2025-05-11 01:42:42,371 - INFO - Login exitoso para usuario: marianag
+2025-05-11 01:46:21,781 - INFO - Autenticación exitosa para usuario: marianag
+2025-05-11 01:46:21,786 - INFO - Login exitoso para usuario: marianag
+2025-05-11 01:48:41,929 - INFO - Autenticación exitosa para usuario: marianag
+2025-05-11 01:48:41,934 - INFO - Login exitoso para usuario: marianag
+2025-05-11 02:20:11,146 - INFO - Autenticación exitosa para usuario: marianag
+2025-05-11 02:20:11,150 - INFO - Login exitoso para usuario: marianag
+2025-05-11 02:21:35,856 - INFO - Autenticación exitosa para usuario: marianag
+2025-05-11 02:21:35,861 - INFO - Login exitoso para usuario: marianag
+2025-05-11 02:22:22,320 - INFO - Autenticación exitosa para usuario: marianag
+2025-05-11 02:22:22,324 - INFO - Login exitoso para usuario: marianag
+2025-05-11 02:26:17,314 - INFO - Autenticación exitosa para usuario: marianag
+2025-05-11 02:26:17,318 - INFO - Login exitoso para usuario: marianag
+2025-05-11 02:26:55,066 - INFO - Autenticación exitosa para usuario: marianag
+2025-05-11 02:26:55,070 - INFO - Login exitoso para usuario: marianag

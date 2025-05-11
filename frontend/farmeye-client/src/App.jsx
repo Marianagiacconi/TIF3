@@ -5,6 +5,8 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import DashboardPage from './pages/DashboardPage';
 import HomeScreen from './pages/HomeScreen';
+import WelcomePage from './pages/WelcomePage';
+
 function ProtectedRoute({ children }) {
   const { token } = useAuth();
   return token ? children : <Navigate to="/login" />;
@@ -13,8 +15,8 @@ function ProtectedRoute({ children }) {
 export default function App() {
   return (
     <Routes>
-       {/* 2) Pantalla pública en “/” */}
-+     <Route path="/" element={<HomeScreen />}/>
+       {/* 2) Pantalla pública en "/" */}
+      <Route path="/" element={<WelcomePage />}/>
       <Route path="/login"   element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/dashboard" element={
