@@ -1,0 +1,859 @@
+2025-05-10 22:15:09,414 - INFO - FarmEye Backend started successfully
+2025-05-10 22:15:09,428 - INFO - Procesando imagen: 1746918735_7f3d5a19-2fc1-4689-a371-781df33a6044.jpeg para usuario marian
+2025-05-10 22:15:10,769 - INFO - Modelo cargado exitosamente
+2025-05-10 22:15:11,268 - INFO - Predicción: Sanas (85.51%)
+2025-05-10 22:15:11,271 - ERROR - Error en /api/scan: (sqlite3.OperationalError) table diagnosis has no column named diagnosis_metadata
+[SQL: INSERT INTO diagnosis (resultado, recomendacion, archivo, sintomas, timestamp, diagnosis_metadata, user_id) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Sanas - Nivel de confianza: 85.51%', 'Mantener monitoreo regular', '1746918735_7f3d5a19-2fc1-4689-a371-781df33a6044.jpeg', '[]', '2025-05-11 01:15:11.269000', '{"nivel_confianza": 0.8551108837127686, "severidad": "baja", "estadisticas": {}}', 3)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-05-10 22:17:48,611 - INFO - FarmEye Backend started successfully
+2025-05-10 22:17:57,539 - ERROR - Error en registro: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.disabled AS users_disabled, users.email AS users_email, users.telefono AS users_telefono, users.direccion AS users_direccion, users.rol AS users_rol 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('marian', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-05-10 22:18:03,333 - ERROR - Error en login: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.disabled AS users_disabled, users.email AS users_email, users.telefono AS users_telefono, users.direccion AS users_direccion, users.rol AS users_rol 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('marian', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-05-10 22:18:31,109 - INFO - FarmEye Backend started successfully
+2025-05-10 22:18:55,716 - INFO - FarmEye Backend started successfully
+2025-05-10 22:19:06,863 - ERROR - Error en registro: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.disabled AS users_disabled, users.email AS users_email, users.telefono AS users_telefono, users.direccion AS users_direccion, users.rol AS users_rol 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('marian', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-05-10 22:19:20,016 - INFO - FarmEye Backend started successfully
+2025-05-10 22:19:28,088 - ERROR - Error en registro: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.disabled AS users_disabled, users.email AS users_email, users.telefono AS users_telefono, users.direccion AS users_direccion, users.rol AS users_rol 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('marian', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-05-10 22:20:17,260 - INFO - FarmEye Backend started successfully
+2025-05-10 22:20:21,623 - ERROR - Error en registro: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.disabled AS users_disabled, users.email AS users_email, users.telefono AS users_telefono, users.direccion AS users_direccion, users.rol AS users_rol 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('marian', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-05-10 22:20:48,365 - INFO - FarmEye Backend started successfully
+2025-05-10 22:21:11,981 - INFO - FarmEye Backend started successfully
+2025-05-10 22:21:20,055 - ERROR - Error en registro: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.disabled AS users_disabled, users.email AS users_email, users.telefono AS users_telefono, users.direccion AS users_direccion, users.rol AS users_rol 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('marian', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/app/routes/auth.py", line 27, in register
+    db_user = db.query(UserModel).filter(UserModel.username == user.username).first()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2748, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2308, in execute
+    return self._execute_internal(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2190, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.disabled AS users_disabled, users.email AS users_email, users.telefono AS users_telefono, users.direccion AS users_direccion, users.rol AS users_rol 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('marian', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+2025-05-10 22:21:38,255 - INFO - FarmEye Backend started successfully
+2025-05-10 22:22:02,850 - INFO - FarmEye Backend started successfully
+2025-05-10 22:22:06,373 - INFO - Usuario registrado exitosamente: marian
+2025-05-10 22:22:15,607 - ERROR - Error en registro: 
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/app/routes/auth.py", line 29, in register
+    raise HTTPException(
+fastapi.exceptions.HTTPException
+
+2025-05-10 22:22:33,661 - INFO - FarmEye Backend started successfully
+2025-05-10 22:22:51,692 - INFO - FarmEye Backend started successfully
+2025-05-10 22:22:57,345 - ERROR - Error en registro: 
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/app/routes/auth.py", line 29, in register
+    raise HTTPException(
+fastapi.exceptions.HTTPException
+
+2025-05-10 22:23:26,714 - INFO - FarmEye Backend started successfully
+2025-05-10 22:24:09,666 - INFO - Autenticación exitosa para usuario: marian
+2025-05-10 22:24:09,671 - ERROR - Error en login: (sqlite3.IntegrityError) NOT NULL constraint failed: refresh_tokens.token
+[SQL: INSERT INTO refresh_tokens (token, user_id) VALUES (?, ?)]
+[parameters: (None, 1)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: NOT NULL constraint failed: refresh_tokens.token
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/app/routes/auth.py", line 93, in login
+    db.commit()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1969, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1256, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1231, in _prepare_impl
+    self.session.flush()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4312, in flush
+    self._flush(objects)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4447, in _flush
+    with util.safe_reraise():
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4408, in _flush
+    flush_context.execute()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1226, in _emit_insert_statements
+    result = connection.execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: refresh_tokens.token
+[SQL: INSERT INTO refresh_tokens (token, user_id) VALUES (?, ?)]
+[parameters: (None, 1)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+2025-05-10 22:24:17,494 - INFO - FarmEye Backend started successfully
+2025-05-10 22:24:24,549 - INFO - Usuario registrado exitosamente: marian
+2025-05-10 22:24:28,044 - INFO - Autenticación exitosa para usuario: marian
+2025-05-10 22:24:28,051 - INFO - Login exitoso para usuario: marian
+2025-05-10 22:27:39,183 - INFO - Procesando imagen: 1746918735_7f3d5a19-2fc1-4689-a371-781df33a6044.jpeg para usuario marian
+2025-05-10 22:27:40,542 - INFO - Modelo cargado exitosamente
+2025-05-10 22:27:41,001 - INFO - Predicción: Sanas (85.51%)
+2025-05-10 22:28:57,248 - INFO - FarmEye Backend started successfully
+2025-05-10 22:30:33,774 - INFO - FarmEye Backend started successfully
+2025-05-10 22:30:40,786 - WARNING - Contraseña incorrecta para usuario: marian
+2025-05-10 22:30:41,488 - WARNING - Contraseña incorrecta para usuario: marian
+2025-05-10 22:30:58,006 - WARNING - Contraseña incorrecta para usuario: marian
+2025-05-10 22:31:19,189 - WARNING - Contraseña incorrecta para usuario: marian
+2025-05-10 22:31:23,760 - INFO - Usuario registrado exitosamente: marian2
+2025-05-10 22:31:27,394 - INFO - Autenticación exitosa para usuario: marian2
+2025-05-10 22:31:27,401 - INFO - Login exitoso para usuario: marian2
+2025-05-10 22:31:35,851 - INFO - Obteniendo datos de usuario: marian2
+2025-05-10 22:32:29,558 - INFO - Procesando imagen: 1746918735_7f3d5a19-2fc1-4689-a371-781df33a6044.jpeg para usuario marian2
+2025-05-10 22:32:30,911 - INFO - Modelo cargado exitosamente
+2025-05-10 22:32:31,387 - INFO - Predicción: Sanas (85.51%)
+2025-05-10 22:32:46,382 - INFO - Obteniendo historial para usuario marian2
+2025-05-10 22:32:46,383 - INFO - Encontrados 1 diagnósticos
+2025-05-10 22:35:05,258 - INFO - FarmEye Backend started successfully
+2025-05-10 22:35:59,688 - INFO - FarmEye Backend started successfully
+2025-05-10 22:38:03,064 - INFO - Procesando imagen: 1746918735_7f3d5a19-2fc1-4689-a371-781df33a6044.jpeg para usuario marian2
+2025-05-10 22:38:04,373 - INFO - Modelo cargado exitosamente
+2025-05-10 22:38:04,844 - INFO - Predicción: Sanas (85.51%)
+2025-05-10 22:40:08,493 - INFO - FarmEye Backend started successfully
+2025-05-10 22:40:21,879 - INFO - FarmEye Backend started successfully
+2025-05-10 22:42:11,761 - INFO - Autenticación exitosa para usuario: marian2
+2025-05-10 22:42:11,766 - INFO - Login exitoso para usuario: marian2
+2025-05-10 22:42:36,432 - INFO - Procesando imagen: 1746918735_7f3d5a19-2fc1-4689-a371-781df33a6044.jpeg para usuario marian2
+2025-05-10 22:42:37,698 - INFO - Modelo cargado exitosamente
+2025-05-10 22:42:38,152 - INFO - Predicción: Sanas (85.51%)
+2025-05-10 22:42:41,359 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-10 22:42:47,985 - INFO - Obteniendo historial para usuario marian2
+2025-05-10 22:42:47,988 - INFO - Encontrados 2 diagnósticos
+2025-05-10 22:43:25,077 - INFO - Procesando imagen: 1746918735_7f3d5a19-2fc1-4689-a371-781df33a6044.jpeg para usuario marian2
+2025-05-10 22:43:25,167 - INFO - Predicción: Sanas (85.51%)
+2025-05-10 22:43:25,697 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-10 22:46:11,062 - INFO - FarmEye Backend started successfully
+2025-05-10 22:46:24,314 - INFO - Procesando imagen: 1746918735_7f3d5a19-2fc1-4689-a371-781df33a6044.jpeg para usuario marian2
+2025-05-10 22:46:25,644 - INFO - Modelo cargado exitosamente
+2025-05-10 22:46:26,114 - INFO - Predicción: Sanas (85.51%)
+2025-05-10 22:46:29,548 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-10 22:47:47,800 - INFO - FarmEye Backend started successfully
+2025-05-10 22:52:42,273 - INFO - FarmEye Backend started successfully
+2025-05-10 22:52:45,631 - INFO - FarmEye Backend started successfully
+2025-05-10 22:53:01,010 - INFO - FarmEye Backend started successfully
+2025-05-10 22:53:04,076 - INFO - FarmEye Backend started successfully
+2025-05-10 22:53:30,464 - INFO - FarmEye Backend started successfully
+2025-05-10 22:53:43,191 - INFO - FarmEye Backend started successfully
+2025-05-10 22:53:51,584 - INFO - FarmEye Backend started successfully
+2025-05-10 22:53:55,947 - INFO - FarmEye Backend started successfully
+2025-05-10 22:54:00,796 - INFO - FarmEye Backend started successfully
+2025-05-10 22:54:05,166 - INFO - FarmEye Backend started successfully
+2025-05-10 22:54:13,940 - INFO - FarmEye Backend started successfully
+2025-05-10 22:54:18,148 - INFO - FarmEye Backend started successfully
+2025-05-10 22:54:23,834 - INFO - FarmEye Backend started successfully
+2025-05-10 22:54:27,417 - INFO - FarmEye Backend started successfully
+2025-05-10 22:54:31,806 - INFO - FarmEye Backend started successfully
+2025-05-10 22:54:36,530 - INFO - FarmEye Backend started successfully
+2025-05-10 22:54:40,485 - INFO - FarmEye Backend started successfully
+2025-05-10 22:54:46,207 - INFO - FarmEye Backend started successfully
+2025-05-10 22:54:55,678 - INFO - FarmEye Backend started successfully
+2025-05-10 22:55:01,669 - INFO - FarmEye Backend started successfully
+2025-05-10 22:55:06,525 - INFO - FarmEye Backend started successfully
+2025-05-10 22:56:27,899 - INFO - FarmEye Backend started successfully
+2025-05-10 22:57:00,029 - INFO - FarmEye Backend started successfully
+2025-05-10 22:57:20,674 - INFO - FarmEye Backend started successfully
+2025-05-10 22:58:12,842 - INFO - FarmEye Backend started successfully
+2025-05-10 22:58:18,977 - INFO - FarmEye Backend started successfully
+2025-05-10 22:58:23,964 - INFO - FarmEye Backend started successfully
+2025-05-10 22:58:30,520 - INFO - FarmEye Backend started successfully
+2025-05-10 22:58:37,702 - INFO - FarmEye Backend started successfully
+2025-05-10 22:58:42,562 - INFO - FarmEye Backend started successfully
+2025-05-10 22:58:46,839 - INFO - FarmEye Backend started successfully
+2025-05-10 22:58:51,866 - INFO - FarmEye Backend started successfully
+2025-05-10 22:58:58,478 - INFO - FarmEye Backend started successfully
+2025-05-10 22:59:03,355 - INFO - FarmEye Backend started successfully
+2025-05-10 22:59:08,657 - INFO - FarmEye Backend started successfully
+2025-05-10 22:59:28,279 - INFO - FarmEye Backend started successfully
+2025-05-10 22:59:42,439 - INFO - FarmEye Backend started successfully
+2025-05-10 22:59:48,018 - INFO - FarmEye Backend started successfully
+2025-05-10 22:59:53,994 - INFO - FarmEye Backend started successfully
+2025-05-10 23:00:01,881 - INFO - FarmEye Backend started successfully
+2025-05-10 23:00:22,564 - INFO - FarmEye Backend started successfully
+2025-05-10 23:00:44,393 - INFO - FarmEye Backend started successfully
+2025-05-10 23:00:53,291 - INFO - FarmEye Backend started successfully
+2025-05-10 23:01:17,414 - INFO - FarmEye Backend started successfully
+2025-05-10 23:09:41,376 - INFO - FarmEye Backend started successfully
+2025-05-10 23:09:56,070 - INFO - FarmEye Backend started successfully
+2025-05-10 23:11:22,598 - ERROR - Error en login: Mapper 'Mapper[User(users)]' has no property 'diagnosticos'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 2505, in get_property
+    return self._props[key]
+KeyError: 'diagnosticos'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/app/routes/auth.py", line 75, in login
+    user = authenticate_user(form_data.username, form_data.password, db)
+  File "/home/marian/tif3/backend/app/services/auth.py", line 27, in authenticate_user
+    user = db.query(User).filter(User.username == username).first()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2912, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 276, in __init__
+    self._set_entities(entities)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 288, in _set_entities
+    self._raw_columns = [
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 289, in <listcomp>
+    coercions.expect(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/sql/coercions.py", line 406, in expect
+    insp._post_inspect
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 1260, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 2707, in _post_inspect
+    self._check_configure()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 2386, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 4199, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 4240, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 2403, in _post_configure_properties
+    prop.init()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/interfaces.py", line 579, in init
+    self.do_init()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/relationships.py", line 1640, in do_init
+    self._generate_backref()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/relationships.py", line 2129, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/relationships.py", line 1571, in _add_reverse_property
+    other = self.mapper.get_property(key, _configure_mappers=False)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 2507, in get_property
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Mapper 'Mapper[User(users)]' has no property 'diagnosticos'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+
+2025-05-10 23:11:23,430 - ERROR - Error en login: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'Mapper[Diagnosis(diagnosis)]'. Original exception was: Mapper 'Mapper[User(users)]' has no property 'diagnosticos'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/app/routes/auth.py", line 75, in login
+    user = authenticate_user(form_data.username, form_data.password, db)
+  File "/home/marian/tif3/backend/app/services/auth.py", line 27, in authenticate_user
+    user = db.query(User).filter(User.username == username).first()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2912, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 276, in __init__
+    self._set_entities(entities)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 288, in _set_entities
+    self._raw_columns = [
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 289, in <listcomp>
+    coercions.expect(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/sql/coercions.py", line 406, in expect
+    insp._post_inspect
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 1260, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 2707, in _post_inspect
+    self._check_configure()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 2386, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 4199, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 4236, in _do_configure_registries
+    raise e
+sqlalchemy.exc.InvalidRequestError: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'Mapper[Diagnosis(diagnosis)]'. Original exception was: Mapper 'Mapper[User(users)]' has no property 'diagnosticos'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+
+2025-05-10 23:12:06,091 - INFO - FarmEye Backend started successfully
+2025-05-10 23:12:09,376 - ERROR - Error en registro: Mapper 'Mapper[User(users)]' has no property 'diagnosticos'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 2505, in get_property
+    return self._props[key]
+KeyError: 'diagnosticos'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/app/routes/auth.py", line 29, in register
+    db_user = db.query(UserModel).filter(UserModel.username == user.username).first()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2912, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 276, in __init__
+    self._set_entities(entities)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 288, in _set_entities
+    self._raw_columns = [
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 289, in <listcomp>
+    coercions.expect(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/sql/coercions.py", line 406, in expect
+    insp._post_inspect
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 1260, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 2707, in _post_inspect
+    self._check_configure()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 2386, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 4199, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 4240, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 2403, in _post_configure_properties
+    prop.init()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/interfaces.py", line 579, in init
+    self.do_init()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/relationships.py", line 1640, in do_init
+    self._generate_backref()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/relationships.py", line 2129, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/relationships.py", line 1571, in _add_reverse_property
+    other = self.mapper.get_property(key, _configure_mappers=False)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 2507, in get_property
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Mapper 'Mapper[User(users)]' has no property 'diagnosticos'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+
+2025-05-10 23:12:20,492 - INFO - FarmEye Backend started successfully
+2025-05-10 23:12:23,101 - ERROR - Error en registro: (sqlite3.OperationalError) no such column: users.is_active
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.telefono AS users_telefono, users.direccion AS users_direccion, users.is_active AS users_is_active, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('test_user', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: users.is_active
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/app/routes/auth.py", line 29, in register
+    db_user = db.query(UserModel).filter(UserModel.username == user.username).first()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2748, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2308, in execute
+    return self._execute_internal(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2190, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: users.is_active
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.telefono AS users_telefono, users.direccion AS users_direccion, users.is_active AS users_is_active, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('test_user', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+2025-05-10 23:14:05,510 - ERROR - Error en registro: (sqlite3.OperationalError) no such column: users.is_active
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.telefono AS users_telefono, users.direccion AS users_direccion, users.is_active AS users_is_active, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('test_user', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: users.is_active
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/app/routes/auth.py", line 29, in register
+    db_user = db.query(UserModel).filter(UserModel.username == user.username).first()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2748, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2308, in execute
+    return self._execute_internal(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2190, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: users.is_active
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.telefono AS users_telefono, users.direccion AS users_direccion, users.is_active AS users_is_active, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('test_user', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+2025-05-10 23:14:07,840 - ERROR - Error en login: (sqlite3.OperationalError) no such column: users.is_active
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.telefono AS users_telefono, users.direccion AS users_direccion, users.is_active AS users_is_active, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('test_user', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: users.is_active
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/app/routes/auth.py", line 75, in login
+    user = authenticate_user(form_data.username, form_data.password, db)
+  File "/home/marian/tif3/backend/app/services/auth.py", line 27, in authenticate_user
+    user = db.query(User).filter(User.username == username).first()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2748, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2308, in execute
+    return self._execute_internal(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2190, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: users.is_active
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.telefono AS users_telefono, users.direccion AS users_direccion, users.is_active AS users_is_active, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('test_user', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+2025-05-10 23:14:54,074 - ERROR - Error en registro: (sqlite3.OperationalError) no such column: users.is_active
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.telefono AS users_telefono, users.direccion AS users_direccion, users.is_active AS users_is_active, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('test_user', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: users.is_active
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/app/routes/auth.py", line 29, in register
+    db_user = db.query(UserModel).filter(UserModel.username == user.username).first()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2748, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2308, in execute
+    return self._execute_internal(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2190, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: users.is_active
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.telefono AS users_telefono, users.direccion AS users_direccion, users.is_active AS users_is_active, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('test_user', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+2025-05-10 23:15:42,772 - ERROR - Error en registro: (sqlite3.OperationalError) no such column: users.is_active
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.telefono AS users_telefono, users.direccion AS users_direccion, users.is_active AS users_is_active, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('test_user', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: users.is_active
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/app/routes/auth.py", line 29, in register
+    db_user = db.query(UserModel).filter(UserModel.username == user.username).first()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2748, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2308, in execute
+    return self._execute_internal(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2190, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: users.is_active
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.telefono AS users_telefono, users.direccion AS users_direccion, users.is_active AS users_is_active, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('test_user', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+2025-05-10 23:16:07,796 - INFO - FarmEye Backend started successfully
+2025-05-10 23:16:27,785 - ERROR - Error en registro: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.telefono AS users_telefono, users.direccion AS users_direccion, users.is_active AS users_is_active, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('test_user', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/app/routes/auth.py", line 29, in register
+    db_user = db.query(UserModel).filter(UserModel.username == user.username).first()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2748, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2308, in execute
+    return self._execute_internal(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2190, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.telefono AS users_telefono, users.direccion AS users_direccion, users.is_active AS users_is_active, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('test_user', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+2025-05-10 23:17:06,809 - INFO - FarmEye Backend started successfully
+2025-05-10 23:17:13,376 - ERROR - Error en registro: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.telefono AS users_telefono, users.direccion AS users_direccion, users.is_active AS users_is_active, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('test_user', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/app/routes/auth.py", line 29, in register
+    db_user = db.query(UserModel).filter(UserModel.username == user.username).first()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2748, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2308, in execute
+    return self._execute_internal(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2190, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.telefono AS users_telefono, users.direccion AS users_direccion, users.is_active AS users_is_active, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('test_user', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+2025-05-10 23:18:02,148 - INFO - FarmEye Backend started successfully
+2025-05-10 23:18:32,412 - INFO - FarmEye Backend started successfully
+2025-05-10 23:18:43,500 - ERROR - Error en registro: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.telefono AS users_telefono, users.direccion AS users_direccion, users.is_active AS users_is_active, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('test_user', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/app/routes/auth.py", line 29, in register
+    db_user = db.query(UserModel).filter(UserModel.username == user.username).first()
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2748, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2308, in execute
+    return self._execute_internal(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2190, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.telefono AS users_telefono, users.direccion AS users_direccion, users.is_active AS users_is_active, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('test_user', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+2025-05-10 23:19:03,979 - INFO - FarmEye Backend started successfully
+2025-05-10 23:19:17,279 - INFO - FarmEye Backend started successfully
+2025-05-10 23:19:18,065 - INFO - Usuario registrado exitosamente: test_user
+2025-05-10 23:19:29,172 - INFO - FarmEye Backend started successfully
+2025-05-10 23:22:28,322 - INFO - FarmEye Backend started successfully
+2025-05-10 23:22:34,057 - INFO - Usuario registrado exitosamente: test_user2
+2025-05-10 23:23:10,190 - INFO - FarmEye Backend started successfully
+2025-05-10 23:23:16,565 - INFO - Autenticación exitosa para usuario: test_user2
+2025-05-10 23:23:16,575 - INFO - Login exitoso para usuario: test_user2
+2025-05-10 23:23:20,368 - INFO - Obteniendo datos de usuario: test_user2
+2025-05-10 23:23:41,142 - INFO - Usuario registrado exitosamente: test_user3
+2025-05-10 23:23:44,953 - INFO - Autenticación exitosa para usuario: test_user3
+2025-05-10 23:23:44,958 - INFO - Login exitoso para usuario: test_user3
+2025-05-10 23:23:48,997 - INFO - Obteniendo datos de usuario: test_user3
+2025-05-10 23:23:52,470 - ERROR - Error actualizando perfil: Instance '<User at 0x7fa641238d00>' is not persistent within this Session
+Traceback (most recent call last):
+  File "/home/marian/tif3/backend/app/routes/auth.py", line 240, in update_profile
+    db.refresh(current_user)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3103, in refresh
+    self._expire_state(state, attribute_names)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3229, in _expire_state
+    self._validate_persistent(state)
+  File "/home/marian/tif3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4098, in _validate_persistent
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Instance '<User at 0x7fa641238d00>' is not persistent within this Session
+
+2025-05-10 23:24:01,544 - INFO - FarmEye Backend started successfully
+2025-05-10 23:24:06,375 - INFO - Perfil actualizado para usuario: test_user3

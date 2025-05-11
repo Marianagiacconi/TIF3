@@ -1,55 +1,94 @@
 # 🐔 FarmEye Backend
 
-FarmEye es un sistema de backend desarrollado como parte de mi tesis de Ingeniería de Sistemas en la Universidad de Mendoza. Su objetivo es analizar imágenes de gallinas ponedoras para detectar signos clínicos de enfermedad visibles, utilizando procesamiento asincrónico, autenticación segura y arquitectura modular lista para integrar modelos de inteligencia artificial.
+Diagnóstico inteligente de salud de gallinas ponedoras a partir de imágenes y síntomas, con recomendaciones expertas generadas por IA.
 
-Este repositorio contiene la API principal del proyecto, desarrollada con **FastAPI**, y diseñada para escalar fácilmente en entornos distribuidos.
+## 🚀 Descripción
+Este backend permite:
+- Registro y autenticación de usuarios.
+- Análisis de imágenes de gallinas para diagnóstico automático.
+- Recomendaciones veterinarias generadas por IA (OpenRouter/Mistral-7B).
+- Historial de diagnósticos y descarga de reportes en PDF.
+- Actualización de perfil y cambio de contraseña.
+- API documentada y testeada profesionalmente.
+
+## 🛠️ Instalación
+
+### Opción 1: Instalación Local
+1. Clona el repositorio y entra al directorio:
+   ```bash
+   git clone <repo_url>
+   cd backend
+   ```
+2. Crea un entorno virtual e instala dependencias:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+   ```
+3. Crea un archivo `.env` con tu clave de OpenRouter:
+   ```env
+   OPENROUTER_API_KEY=sk-xxxxxx
+   ```
+4. Inicializa la base de datos (opcional):
+   ```bash
+   python app/init_db.py
+   ```
+5. Ejecuta el servidor:
+   ```bash
+   uvicorn app.main:app --reload
+   ```
+
+### Opción 2: Usando Docker (Recomendado)
+1. Asegúrate de tener Docker y Docker Compose instalados.
+2. Crea un archivo `.env` con tu clave de OpenRouter:
+   ```env
+   OPENROUTER_API_KEY=sk-xxxxxx
+   ```
+3. Construye y ejecuta los contenedores:
+   ```bash
+   docker-compose up --build
+   ```
+   La aplicación estará disponible en `http://localhost:8000`
+
+## 📚 Uso de la API
+- Documentación interactiva: [http://localhost:8000/docs](http://localhost:8000/docs)
+- Redoc: [http://localhost:8000/redoc](http://localhost:8000/redoc)
+
+### Endpoints principales
+- `POST /auth/register` — Registro de usuario
+- `POST /auth/login` — Login y obtención de tokens
+- `POST /api/scan` — Analizar imagen y síntomas
+- `GET /api/analyses` — Historial paginado
+- `GET /api/analyses/{id}/pdf` — Descargar diagnóstico en PDF
+- `PUT /auth/users/me` — Actualizar perfil
+- `POST /auth/change-password` — Cambiar contraseña
+
+### Ejemplo de análisis de imagen
+```bash
+curl -X POST "http://localhost:8000/api/scan" \
+  -H "Authorization: Bearer <token>" \
+  -F "file=@ruta/a/imagen.jpg" \
+  -F "sintomas=[\"fiebre\",\"fatiga\"]"
+```
+
+## 🧪 Tests y chequeos de calidad
+- Ejecuta todos los tests y chequeos:
+  ```bash
+  ./scripts/check.sh
+  ```
+- Tests unitarios y de integración con pytest.
+- Chequeo de formato (black), imports (isort), estilo (flake8) y tipos (mypy).
+
+## 📁 Estructura del proyecto
+- `app/` — Código principal (modelos, rutas, servicios)
+- `tests/` — Tests automáticos
+- `scripts/` — Utilidades y chequeos
+- `requirements.txt` — Dependencias
+- `Dockerfile` — Configuración de Docker
+- `docker-compose.yml` — Orquestación de servicios
+
+## 👨‍💻 Créditos
+Desarrollado por Marian y colaboradores.
 
 ---
-
-## 🛠️ Recomendaciones futuras
-
-- Reemplazar `fake_user_db` por un sistema real de autenticación con **SQLAlchemy** y contraseñas encriptadas con **bcrypt**.
-- Guardar `SECRET_KEY` y otras variables sensibles como **variables de entorno** en lugar de tenerlas hardcodeadas.
-- Implementar configuración avanzada usando **Pydantic Settings** o **Dynaconf**, ideal para entornos de desarrollo, testing y producción.
-- Desacoplar lógica en módulos más específicos, como `routes/`, `services/`, `schemas/`, para mayor escalabilidad y mantenibilidad.
-
-## ⚙️ Tecnologías utilizadas
-
-- **FastAPI** · Framework principal para la construcción de APIs web modernas y asincrónicas.
-- **Python 3.10+** · Lenguaje de programación base del proyecto.
-- **JWT (OAuth2)** · Autenticación segura mediante tokens.
-- **BackgroundTasks** · Procesamiento en segundo plano de cargas de imágenes.
-- **Logging** · Registro estructurado de eventos en archivos de log.
-- **Docker (opcional)** · Preparado para contenedores y despliegue reproducible.
-- **Pydantic** · Validación de datos y manejo de modelos.
-
-## 📦 Instalación y ejecución
-
-1. Clona este repositorio:
-
-```bash
-git clone https://github.com/tu-usuario/farmeye_backend.git
-cd farmeye_backend
-```
-
-2. Crea un entorno virtual:
-
-```bash
-python -m venv venv
-source venv/bin/activate  # En Linux/macOS
-venv\Scripts\activate   # En Windows
-```
-
-3. Instala las dependencias:
-
-```bash
-pip install -r requirements.txt
-```
-
-4. Ejecuta el servidor:
-
-```bash
-uvicorn app.main:app --reload
-```
-
-> Accede a la documentación interactiva de la API en `http://localhost:8000/docs`
+¡Contribuciones y sugerencias son bienvenidas!

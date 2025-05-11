@@ -1,0 +1,28 @@
+# Obtener historial paginado
+curl -X GET "http://localhost:8000/api/analyses?page=1&limit=10" \
+  -H "Authorization: Bearer <tu_token>"
+
+# Descargar PDF de un diagnóstico
+curl -X GET "http://localhost:8000/api/analyses/1/pdf" \
+  -H "Authorization: Bearer <tu_token>" \
+  --output diagnostico.pdf
+
+# Actualizar perfil
+curl -X PUT "http://localhost:8000/auth/users/me" \
+  -H "Authorization: Bearer <tu_token>" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "full_name": "Nuevo Nombre",
+    "email": "nuevo@email.com",
+    "telefono": "123456789",
+    "direccion": "Nueva Dirección"
+  }'
+
+# Cambiar contraseña
+curl -X POST "http://localhost:8000/auth/change-password" \
+  -H "Authorization: Bearer <tu_token>" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "old_password": "123456",
+    "new_password": "nueva123"
+  }'
